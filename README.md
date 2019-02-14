@@ -13,11 +13,18 @@ An AWS API Gateway proxies HTTP requests from a public url to a Lambda which run
 
 I suggest setting up [ngrok](https://ngrok.com/). ngrok gives you a public URL that redirects to localhost. This way, you can do all of your development and testing locally and with your debugger instead of having to update and republish the Lambda over and over.
 
-Seriously, it saves a ton of time and it's extreemly easy to setup.
+Seriously, it saves a ton of time and it's extremely easy to setup.
 
 1. Start the test server with `node test/server.js`
 2. Create a ngrok proxy to the test server: `ngrok http 3000`
 3. Replace the request URLs in your Slack app with your ngrok HTTPS URL. Don't forget to set them back when you are done.
+
+
+## Deployment
+
+To deploy a custom version of this app create a new Slack app and create a Slash Command with the request url set to your API Gateway and the `Escape channels, users, and links sent to your app` option enabled.
+
+Example Usage Hint: `[@user @user ...] [x3]`
 
 
 ## Releasing
